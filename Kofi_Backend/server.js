@@ -4,6 +4,16 @@ const { MongoClient , ObjectId } = require('mongodb');
 const app = express();
 app.use(express.json());
 
+const cors = require("cors");
+
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://kofi-hub-6.onrender.com"], // Allow frontend origins
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type",
+};
+
+app.use(cors(corsOptions));
+
 const uri = "mongodb+srv://shivamsinghnegi2006:1234@cluster0.6teit.mongodb.net/";
 const client = new MongoClient(uri);
 const dbName = "Kofi_Hub";
@@ -222,8 +232,7 @@ app.delete('/coffee-beans/:id', async (req, res) => {
 
 
 
-
-
+//--------------------------- START SERVER --------------------------------
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
