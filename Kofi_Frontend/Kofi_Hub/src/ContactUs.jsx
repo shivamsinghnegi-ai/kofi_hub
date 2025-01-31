@@ -22,7 +22,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
       const response = await fetch("https://kofi-hub-4.onrender.com/contact", {
         method: "POST",
@@ -31,15 +31,13 @@ const ContactUs = () => {
         },
         body: JSON.stringify(formData),
       });
-
+  
+      const data = await response.json();
+      console.log("Response Data:", data); // Debugging response
+  
       if (response.ok) {
         setFormSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          phonenumber: "",
-          message: "",
-        });
+        setFormData({ name: "", email: "", phonenumber: "", message: "" });
       } else {
         setFormSuccess(false);
       }

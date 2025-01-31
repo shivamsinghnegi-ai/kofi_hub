@@ -7,7 +7,7 @@ app.use(express.json());
 const cors = require("cors");
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://kofi-hub-4.onrender.com"], // Allow frontend origins
+  origin: ["http://localhost:5173", "https://kofi-hub-5.onrender.com"], // Allow frontend origins
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type",
 };
