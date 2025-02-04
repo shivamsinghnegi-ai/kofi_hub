@@ -4,7 +4,7 @@
 
 ### Postman Documentation - https://documenter.getpostman.com/view/39186323/2sAYQgioro
 
-### Backend routes Link - https://kofi-hub-6.onrender.com/
+### Backend routes Link - https://kofi-hub-7.onrender.com/
 
 ## 1. Which problem is your project solving?
 Many coffee lovers lack a central platform where they can discover the several options of coffee, brewing techniques, and meet people with similar tastes. Secondly, small coffee vendors also lack visibility as well as an appropriate promotional platform to publicize their product effective.
