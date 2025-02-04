@@ -98,11 +98,11 @@ const ContactUs = () => {
 
         {formSuccess === true ? (
           <p style={{ color: "green", textAlign: "center" }}>
-            ✅ Thank you for contacting us!
+             Thank you for contacting us!
           </p>
         ) : formSuccess === false ? (
           <p style={{ color: "red", textAlign: "center" }}>
-            ❌ Failed to submit. Please try again.
+             Failed to submit. Please try again.
           </p>
         ) : (
           <form onSubmit={handleSubmit} style={{ position: "relative", zIndex: "1" }}>
