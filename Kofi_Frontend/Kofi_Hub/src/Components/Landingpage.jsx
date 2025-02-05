@@ -15,6 +15,14 @@ import image11 from "../assets/Screenshot 2024-10-24 102323.png";
 import image12 from "../assets/CP_20_Jul10171_1_800x (1).png";
 import image13 from "../assets/leftcols_538x 1.png";
 import image14 from "../assets/leftcols_538x 3.png";
+import image15 from "../assets/number_large (1).png";
+import image16 from "../assets/pack_size_large (1).png";
+import image17 from "../assets/coffees_large (1).png";
+import image18 from "../assets/grind_size_large (1).png";
+import image19 from "../assets/frequency_large (1).png";
+import image20 from "../assets/Group_6_1-change (1).png";
+import image21 from "../assets/Asset_1_1_140x (1).png";
+import Footer from "../Components/Footer";
 
 
 const LandingPage = () => {
@@ -255,22 +263,22 @@ const LandingPage = () => {
                 textAlign: "left",
                 alignItems: "flex-start",
                 minHeight: "800px"
-                
+
             }}>
                 <div style={{
                     backgroundColor: "white",
                     padding: "30px",
                     borderRadius: "10px",
                     maxWidth: "700px",
-                    flexGrow:1,
-                    marginLeft:"60px",
-                    alignSelf: "flex-start",  
-                    marginTop:"50px",
+                    flexGrow: 1,
+                    marginLeft: "60px",
+                    alignSelf: "flex-start",
+                    marginTop: "50px",
 
-              
+
                 }}>
                     <h2 style={{ fontSize: "40px", color: "black", fontWeight: "bold" }}>Brew More. Save More!</h2>
-                    <p style={{ fontSize: "21px", color: "#444",fontFamily:"poppins" }}>When you get a subscription from us, you:</p>
+                    <p style={{ fontSize: "21px", color: "#444", fontFamily: "poppins" }}>When you get a subscription from us, you:</p>
                     <ul style={{ padding: "0", listStyle: "none", lineHeight: "2.3", fontSize: "18px" }}>
                         <li><strong>01 /</strong> Save up to 20%</li>
                         <li><strong>02 /</strong> Enjoy convenience with doorstep deliveries</li>
@@ -281,7 +289,7 @@ const LandingPage = () => {
                     <button style={{
                         marginTop: "15px",
                         padding: "12px 25px",
-                        backgroundColor:"#90C1CF",
+                        backgroundColor: "#90C1CF",
                         border: "none",
                         color: "white",
                         fontSize: "1em",
@@ -296,18 +304,85 @@ const LandingPage = () => {
                         maxWidth: "450px",
                         height: "73vh",
                         borderRadius: "10px",
-                        marginLeft:"-30px",
-                        marginTop:"50px"
+                        marginLeft: "-30px",
+                        marginTop: "50px"
                     }} />
                 </div>
-                <img src={image13} alt=""style={{ width: "20%", marginLeft: "1170px", marginTop: "-703px" }}/>
-                <img src={image14} alt=""style={{ width: "20%", marginLeft: "-1530px",marginTop:"-80px"}} />
-                
+                <img src={image13} alt="" style={{ width: "20%", marginLeft: "1170px", marginTop: "-703px" }} />
+                <img src={image14} alt="" style={{ width: "20%", marginLeft: "-1530px", marginTop: "-80px" }} />
+
 
                 <div>
-                   <h1 style={{fontFamily:"cormorant",fontSize:"35px",marginTop:"40px"}}>Completely customise your subscription,in just a few clicks.</h1>
+                    <section style={{ textAlign: "center", backgroundColor: "#FFF9EF", padding: "10px", fontFamily: "Cormorant", marginLeft: "-180px", marginTop: "60px" }}>
+                        <h2 style={{ fontSize: "50px", color: "#333" }}>
+                            Completely customise your subscription, <br /> in just a few clicks.
+                        </h2>
+                        <p style={{ fontSize: "35px", color: "#222", marginTop: "10px" }}>You get to pick:</p>
+
+                        <div style={{ display: "flex", justifyContent: "center", gap: "100px", marginTop: "90px" }}>
+                            <div style={{ textAlign: "center" }}>
+                                <img src={image15} alt="Number" style={{ width: "150px" }} />
+                                <p style={{ fontSize: "30px", color: "#333", fontFamily: "poppins" }}>Number</p>
+                            </div>
+                            <div style={{ textAlign: "center" }}>
+                                <img src={image16} alt="Pack Size" style={{ width: "150px" }} />
+                                <p style={{ fontSize: "30px", color: "#333", fontFamily: "poppins" }}>Pack Size</p>
+                            </div>
+                            <div style={{ textAlign: "center" }}>
+                                <img src={image17} alt="Coffee" style={{ width: "150px" }} />
+                                <p style={{ fontSize: "30px", color: "#333", fontFamily: "poppins" }}>Coffee</p>
+                            </div>
+                            <div style={{ textAlign: "center" }}>
+                                <img src={image18} alt="Grind Size" style={{ width: "150px" }} />
+                                <p style={{ fontSize: "30px", color: "#333", fontFamily: "poppins" }}>Grind Size</p>
+                            </div>
+                            <div style={{ textAlign: "center" }}>
+                                <img src={image19} alt="Frequency" style={{ width: "150px" }} />
+                                <p style={{ fontSize: "30px", color: "#333", fontFamily: "poppins" }}>Frequency</p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
+
+            <div>
+                <img src={image20} alt="" />
+            </div>
+
+
+            <div style={{ textAlign: "center", fontFamily: "poppins", fontSize: "30px", marginTop: "140px", display: "flex", alignItems: "center", justifyContent: "center", gap: "20px" }}>
+                <img src={image21} alt="" style={{ width: "150px" }} />
+                < h1>Happy Customers</h1>
+            </div>
+
+
+            <div style={{ display: "flex", justifyContent: "center", gap: "50px", flexWrap: "wrap",marginTop:"30px" }}>
+                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between",width:"400px"  }}>
+                    <p style={{ fontSize: "18px", color: "#000000", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px",fontFamily:"poppins",width:"400px" }}>
+                        "I've been drinking coffee for a year now but never tried Blue Tokai. I heard about Attikan a lot and it was worth the hype! I am not a fan of darker roasts but it was one of the smoothest coffees I’ve tried till now. I'm definitely ordering again."
+                    </p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: "10px",fontFamily:"poppins" }}>Keerthi Hardasani</p>
+                    <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
+                </div>
+
+                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between",width:"400px" }}>
+                    <p style={{ fontSize: "18px",  marginBottom: "15px", lineHeight: "1.6", minHeight: "120px",fontFamily:"poppins",width:"400px" }}>
+                        "Love the packaging, the coffee selection, the community events you do. The general love for coffee you want to share with the world is amazing to see. Keep shining! :)"
+                    </p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px",fontFamily:"poppins" }}>Sahil Madan</p>
+                    <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
+                </div>
+
+                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between",width:"400px" }}>
+                    <p style={{ fontSize: "19px", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px",fontFamily:"poppins",width:"400px" }}>
+                        "Blue Tokai is hands down the best coffee brand out there! I've enjoyed each cup at their cafes and whenever I brew at home. I can’t get enough of their coffee and I recommend it to everyone!"
+                    </p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px",fontFamily:"poppins" }}>Krishna Sarbadhikary</p>
+                    <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
+                </div>
+            </div>
+            <Footer/>
+
 
 
 

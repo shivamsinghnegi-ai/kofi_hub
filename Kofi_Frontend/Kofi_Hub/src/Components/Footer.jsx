@@ -12,7 +12,7 @@ const Footer = () => {
       justifyContent: "space-between",
       padding: "20px 80px",
       fontFamily: "Patua One",
-      width: "88.5%",
+      width: "90.8%",
       marginLeft: "-29px",
       position: "absolute",
       zIndex: "1",
