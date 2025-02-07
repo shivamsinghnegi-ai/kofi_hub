@@ -92,8 +92,10 @@ const LandingPage = () => {
                         fontFamily: "Poppins, sans-serif",
                         padding: "15px",
                         width: "300px",
-
+                        borderRadius: "10px",
                         textAlign: "center",
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        backgroundColor: "#ffffff",
                     }}
                 >
                     <img
@@ -136,8 +138,11 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        backgroundColor: "#ffffff",
                     }}
                 >
+                
                     <img
                         src={image9}
                         alt="5 in 1 Explorer Pack"
@@ -178,6 +183,8 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        backgroundColor: "#ffffff",
                     }}
                 >
                     <img
@@ -218,6 +225,8 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        backgroundColor: "#ffffff",
                     }}
                 >
                     <img

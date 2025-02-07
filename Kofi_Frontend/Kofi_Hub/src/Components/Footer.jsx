@@ -17,6 +17,7 @@ const Footer = () => {
       position: "absolute",
       zIndex: "1",
       marginTop: "110px",
+      overflowX: "hidden",
   
     }}>
       {/* Logo Section */}
