@@ -27,6 +27,7 @@ const db = client.db(dbName);
 
 const contactcollection = db.collection("contact-form");
 const coffeebeanscollection = db.collection("CoffeeBeans");
+const equipmentcollection = db.collection("Equipment");
 
 
 //---------------------------  CONTACT FORM --------------------------------
@@ -226,6 +227,140 @@ app.delete('/coffee-beans/:id', async (req, res) => {
 });
 
 
+// --------------------------- Equipment Brewing Routes ---------------------------
+
+// Get all brewing equipment
+app.get('/equipment', async (req, res) => {
+  try {
+    const allEquipment = await equipmentcollection.find().toArray();
+    res.status(200).json(allEquipment);
+  } catch (err) {
+    res.status(500).send("Error fetching brewing equipment: " + err.message);
+  }
+});
+
+// Get a specific brewing equipment by ID
+app.get('/equipment/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid ID format" });
+    }
+    const equipment = await equipmentcollection.findOne({ _id: new ObjectId(id) });
+    if (!equipment) return res.status(404).json({ message: "Equipment not found" });
+
+    res.status(200).json(equipment);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Add a new brewing equipment
+app.post('/equipment', async (req, res) => {
+  try {
+    const { name, type, price, description, image } = req.body;
+    if (!name || !type || !price || !description || !image) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    const newEquipment = {
+      name,
+      type, // Can be "automated" or "manual"
+      price,
+      description,
+      image,
+      createdAt: new Date(),
+    };
+
+    await equipmentcollection.insertOne(newEquipment);
+    res.status(201).json(newEquipment);
+  } catch (error) {
+    res.status(500).json({ message: 'Error adding brewing equipment', error });
+  }
+});
+
+// Update brewing equipment by ID (Full replacement)
+app.put('/equipment/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid ID format" });
+    }
+
+    const { name, type, price, description, image } = req.body;
+    if (!name || !type || !price || !description || !image) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    const updatedEquipment = {
+      name,
+      type,
+      price,
+      description,
+      image,
+    };
+
+    const result = await equipmentcollection.replaceOne({ _id: new ObjectId(id) }, updatedEquipment);
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Equipment not found" });
+    }
+
+    res.status(200).json({ message: "Equipment replaced successfully", updatedEquipment });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Update specific fields of brewing equipment (Partial update)
+app.patch('/equipment/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid ID format" });
+    }
+
+    const updateFields = req.body;
+    if (Object.keys(updateFields).length === 0) {
+      return res.status(400).json({ message: "At least one field is required to update" });
+    }
+
+    const result = await equipmentcollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updateFields }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Equipment not found" });
+    }
+
+    res.status(200).json({ message: "Equipment updated successfully", updateFields });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+    res.status(500).json({})
+  }
+});
+
+// Delete a brewing equipment
+app.delete('/equipment/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid ID format" });
+    }
+
+    const result = await equipmentcollection.deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "Equipment not found" });
+    }
+
+    res.status(200).json({ message: "Equipment deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+    
+  }
+});
 
 
 

@@ -58,7 +58,7 @@ const Navbar = () => {
           <ul style={navListStyle}>
             <li style={navItemStyle}>ROASTED COFFEE</li>
             <li style={navItemStyle}>Offers</li>
-            <li style={navItemStyle}>Equipment</li>
+            <Link to="/equipment" style={{ textDecoration: "none" }}><li style={navItemStyle}>Equipment</li></Link>
             <Link to="/AboutUs" style={{ textDecoration: "none" }}><li style={navItemStyle}>About Us</li></Link>
             <Link to="/Contact" style={{ textDecoration: "none" }}><li style={navItemStyle}>Contact Us</li></Link>
           </ul>
