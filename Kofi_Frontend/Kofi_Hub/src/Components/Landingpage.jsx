@@ -26,7 +26,7 @@ import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 
 
-const LandingPage = () => { 
+const LandingPage = () => {
     return (
         <div>
             <Navbar />
@@ -60,17 +60,21 @@ const LandingPage = () => {
                             <p>BREWING EQUIPMENT</p>
                         </div>
                     </Link>
+                    <Link to="/offers" style={{ textDecoration: "none", color: "inherit" }}>
+                        <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
+                            <img src={image5} alt="" style={{ width: "190px", height: "190px" }} />
+                            <p>ROASTED COFFEE RECOMMENDATION</p>
+                        </div>
+                    </Link>
 
-                    <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
-                        <img src={image5} alt="" style={{ width: "190px", height: "190px" }} />
-                        <p>ROASTED COFFEE RECOMMENDATION</p>
-                    </div>
+
                 </div>
             </div>
-
-            <div>
-                <img src={image6} alt="" style={{ width: "100%" }} />
-            </div>
+            <Link to="/offers" style={{ textDecoration: "none", color: "inherit" }}>
+                <div>
+                    <img src={image6} alt="" style={{ width: "100%" }} />
+                </div>
+            </Link>
             <div>
                 <img src={image7} alt="" style={{ width: "30%", marginLeft: "1060px", marginTop: "-110px" }} />
             </div>
