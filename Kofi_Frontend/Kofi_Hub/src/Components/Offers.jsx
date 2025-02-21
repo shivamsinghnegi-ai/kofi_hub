@@ -212,7 +212,7 @@ const Offers = () => {
             <Footer/>
             </div>
             
-
+ 
           
         </>
     );
