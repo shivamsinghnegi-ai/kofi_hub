@@ -23,9 +23,10 @@ import image19 from "../assets/frequency_large (1).png";
 import image20 from "../assets/Group_6_1-change (1).png";
 import image21 from "../assets/Asset_1_1_140x (1).png";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 
 
-const LandingPage = () => {
+const LandingPage = () => { 
     return (
         <div>
             <Navbar />
@@ -48,14 +49,18 @@ const LandingPage = () => {
                         <img src={image2} alt="" style={{ width: "190px", height: "190px" }} />
                         <p>READY TO DRINK</p>
                     </div>
-                    <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
+                    <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px", cursor: "pointer" }}>
                         <img src={image3} alt="" style={{ width: "190px", height: "190px" }} />
                         <p>NO EQUIPMENT BREWING</p>
                     </div>
-                    <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
-                        <img src={image4} alt="" style={{ width: "190px", height: "190px" }} />
-                        <p>BREWING EQUIPMENT</p>
-                    </div>
+
+                    <Link to="/equipment" style={{ textDecoration: "none", color: "inherit" }}>
+                        <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
+                            <img src={image4} alt="" style={{ width: "190px", height: "190px" }} />
+                            <p>BREWING EQUIPMENT</p>
+                        </div>
+                    </Link>
+
                     <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
                         <img src={image5} alt="" style={{ width: "190px", height: "190px" }} />
                         <p>ROASTED COFFEE RECOMMENDATION</p>
@@ -94,7 +99,7 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
                         backgroundColor: "#ffffff",
                     }}
                 >
@@ -138,11 +143,11 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
                         backgroundColor: "#ffffff",
                     }}
                 >
-                
+
                     <img
                         src={image9}
                         alt="5 in 1 Explorer Pack"
@@ -183,7 +188,7 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
                         backgroundColor: "#ffffff",
                     }}
                 >
@@ -225,7 +230,7 @@ const LandingPage = () => {
                         width: "300px",
                         borderRadius: "10px",
                         textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)", 
+                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
                         backgroundColor: "#ffffff",
                     }}
                 >
@@ -365,32 +370,32 @@ const LandingPage = () => {
             </div>
 
 
-            <div style={{ display: "flex", justifyContent: "center", gap: "50px", flexWrap: "wrap",marginTop:"30px" }}>
-                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between",width:"400px"  }}>
-                    <p style={{ fontSize: "18px", color: "#000000", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px",fontFamily:"poppins",width:"400px" }}>
+            <div style={{ display: "flex", justifyContent: "center", gap: "50px", flexWrap: "wrap", marginTop: "30px" }}>
+                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between", width: "400px" }}>
+                    <p style={{ fontSize: "18px", color: "#000000", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px", fontFamily: "poppins", width: "400px" }}>
                         "I've been drinking coffee for a year now but never tried Blue Tokai. I heard about Attikan a lot and it was worth the hype! I am not a fan of darker roasts but it was one of the smoothest coffees I’ve tried till now. I'm definitely ordering again."
                     </p>
-                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: "10px",fontFamily:"poppins" }}>Keerthi Hardasani</p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: "10px", fontFamily: "poppins" }}>Keerthi Hardasani</p>
                     <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
                 </div>
 
-                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between",width:"400px" }}>
-                    <p style={{ fontSize: "18px",  marginBottom: "15px", lineHeight: "1.6", minHeight: "120px",fontFamily:"poppins",width:"400px" }}>
+                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between", width: "400px" }}>
+                    <p style={{ fontSize: "18px", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px", fontFamily: "poppins", width: "400px" }}>
                         "Love the packaging, the coffee selection, the community events you do. The general love for coffee you want to share with the world is amazing to see. Keep shining! :)"
                     </p>
-                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px",fontFamily:"poppins" }}>Sahil Madan</p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px", fontFamily: "poppins" }}>Sahil Madan</p>
                     <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
                 </div>
 
-                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between",width:"400px" }}>
-                    <p style={{ fontSize: "19px", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px",fontFamily:"poppins",width:"400px" }}>
+                <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between", width: "400px" }}>
+                    <p style={{ fontSize: "19px", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px", fontFamily: "poppins", width: "400px" }}>
                         "Blue Tokai is hands down the best coffee brand out there! I've enjoyed each cup at their cafes and whenever I brew at home. I can’t get enough of their coffee and I recommend it to everyone!"
                     </p>
-                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px",fontFamily:"poppins" }}>Krishna Sarbadhikary</p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px", fontFamily: "poppins" }}>Krishna Sarbadhikary</p>
                     <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
 
 
 

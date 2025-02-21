@@ -6,6 +6,7 @@ import LandingPage from './Components/Landingpage.jsx';
 import AboutUs from './Components/AboutUs.jsx';
 import Farms from './Components/Farms.jsx';
 import EquipmentPage from './Components/Equipment.jsx';
+import Offers from './Components/Offers.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/AboutUs" element={<AboutUs/>}/>
         <Route path="/Farms" element={<Farms/>}/>
         <Route path="/equipment" element={<EquipmentPage/>}/>
+        <Route path="/offers" element={<Offers/>}/>
       </Routes>
     </Router> 
   </StrictMode>,
