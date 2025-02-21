@@ -1,16 +1,18 @@
 import React from "react";
-import user from '../assets/header-user_small.png';
-import Logo from '../assets/Screenshot 2025-02-03 154150.png';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import user from "../assets/header-user_small.png";
+import Logo from "../assets/Screenshot 2025-02-03 154150.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const navbarStyle = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     padding: "12px 30px",
     backgroundColor: "#fff",
-    borderBottom: "3px solid black ",
+    borderBottom: "3px solid black",
   };
 
   const logoStyle = {
@@ -18,6 +20,7 @@ const Navbar = () => {
     width: "100px",
     marginTop: "-18px",
     marginLeft: "20px",
+    cursor: "pointer",
   };
 
   const navListStyle = {
@@ -30,46 +33,41 @@ const Navbar = () => {
     fontFamily: "Patua One",
     flex: 1,
     justifyContent: "center",
-    display: "flex",
     marginLeft: "620px",
   };
 
   const navItemStyle = {
     cursor: "pointer",
     color: "#000",
-
-  };
-
-  const userStyle = {
-    display: "flex",
-    alignItems: "center",
   };
 
   return (
     <header>
       <div style={navbarStyle}>
-        {/* Logo */}
-        <div>
-          <img src={Logo} alt="Blue Tokai Coffee Roasters Logo" style={logoStyle} />
-        </div>
+        <img 
+          src={Logo} 
+          alt="Logo" 
+          style={logoStyle} 
+          onClick={() => navigate("/")} 
+        />
 
-        {/* Navigation Menu */}
         <nav>
           <ul style={navListStyle}>
             <li style={navItemStyle}>ROASTED COFFEE</li>
-            <li style={navItemStyle}>Offers</li>
-            <Link to="/equipment" style={{ textDecoration: "none" }}><li style={navItemStyle}>Equipment</li></Link>
-            <Link to="/AboutUs" style={{ textDecoration: "none" }}><li style={navItemStyle}>About Us</li></Link>
-            <Link to="/Contact" style={{ textDecoration: "none" }}><li style={navItemStyle}>Contact Us</li></Link>
+            <li style={navItemStyle} onClick={() => navigate("/offers")}>Offers</li>
+            <li style={navItemStyle} onClick={() => navigate("/equipment")}>Equipment</li>
+            <li style={navItemStyle} onClick={() => navigate("/AboutUs")}>About Us</li>
+            <li style={navItemStyle} onClick={() => navigate("/Contact")}>Contact Us</li>
           </ul>
         </nav>
 
         {/* User Icon */}
-        <Link to="/">
-          <div style={userStyle}>
-            <img src={user} alt="User" style={{ width: "30px", height: "32px", marginTop: "-5px", cursor: "pointer" }} />
-          </div>
-        </Link>
+        <img 
+          src={user} 
+          alt="" 
+          style={{ width: "30px", height: "32px", marginTop: "-5px", cursor: "pointer" }} 
+          onClick={() => navigate("/")}
+        />
       </div>
     </header>
   );
