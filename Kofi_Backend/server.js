@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient , ObjectId } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
 app.use(express.json());
@@ -28,6 +28,7 @@ const db = client.db(dbName);
 const contactcollection = db.collection("contact-form");
 const coffeebeanscollection = db.collection("CoffeeBeans");
 const equipmentcollection = db.collection("Equipment");
+const drinkscollection = db.collection("Drinks");
 
 
 //---------------------------  CONTACT FORM --------------------------------
@@ -110,7 +111,7 @@ app.get('/coffee-beans/:id', async (req, res) => {
     }
     const bean = await coffeebeanscollection.findOne({ _id: new ObjectId(id) });
     if (!bean) return res.status(404).json({ message: "Coffee bean not found" });
-    
+
     res.status(200).json(bean);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -265,7 +266,7 @@ app.post('/equipment', async (req, res) => {
 
     const newEquipment = {
       name,
-      type, // Can be "automated" or "manual"
+      type,
       price,
       description,
       image,
@@ -358,11 +359,106 @@ app.delete('/equipment/:id', async (req, res) => {
     res.status(200).json({ message: "Equipment deleted successfully" });
   } catch (err) {
     res.status(500).json({ error: err.message });
-    
+
   }
 });
 
 
+//--------------------------- DRINKS --------------------------------
+
+// Get all drinks
+app.get('/drinks', async (req, res) => {
+  try {
+    const drinks = await drinkscollection.find().toArray();
+    res.status(200).json(drinks);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch drinks' });
+  }
+});
+
+
+//Fetch a specific drink by ID
+app.get('/drinks/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log("Received ID:", id);
+
+    if (!ObjectId.isValid(id)) {
+      console.log("Invalid ID format");
+      return res.status(400).json({ error: 'Invalid ID format' });
+    }
+
+    const drink = await drinkscollection.findOne({ _id: new ObjectId(id) });
+
+    if (!drink) {
+      console.log("Drink not found");
+      return res.status(404).json({ error: 'Drink not found' });
+    }
+
+    console.log("Found drink:", drink);
+    res.status(200).json(drink);
+  } catch (error) {
+    console.error("Error fetching drink:", error);
+    res.status(500).json({ error: 'Failed to fetch drink' });
+  }
+});
+
+// Add a new drink
+app.post('/drinks', async (req, res) => {
+  try {
+    const { name, category, price, description, image } = req.body;
+
+    // Check if all required fields are present
+    if (!name || !category || !price || !description || !image) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    const newDrink = {
+      name,
+      category,
+      price,
+      description,
+      image,
+      createdAt: new Date(),
+    };
+
+    // Insert into MongoDB
+    const result = await drinkscollection.insertOne(newDrink);
+
+    res.status(201).json({ message: 'Drink added successfully', drink: newDrink });
+  } catch (error) {
+    res.status(500).json({ message: 'Error adding drink', error: error.message });
+  }
+});
+
+// Update (PUT) - Modify a drink by ID
+app.put('/drinks/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedDrink = req.body;
+    const result = await drinkscollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updatedDrink }
+    );
+    if (result.matchedCount === 0) return res.status(404).json({ error: 'Drink not found' });
+    res.status(200).json({ message: 'Drink updated successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update drink' });
+  }
+});
+
+
+// Delete (DELETE) - Remove a drink by ID
+app.delete('/drinks/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await drinkscollection.deleteOne({ _id: new ObjectId(id) });
+    if (result.deletedCount === 0) return res.status(404).json({ error: 'Drink not found' });
+    res.status(200).json({ message: 'Drink deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete drink' });
+  }
+});
 
 
 
