@@ -51,10 +51,12 @@ const LandingPage = () => {
                             <p>READY TO DRINK</p>
                         </div>
                     </Link>
-                    <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px", cursor: "pointer" }}>
-                        <img src={image3} alt="" style={{ width: "190px", height: "190px" }} />
-                        <p>NO EQUIPMENT BREWING</p>
-                    </div>
+                    <Link to="/noequipment" style={{ textDecoration: "none", color: "inherit" }}>
+                        <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px", cursor: "pointer" }}>
+                            <img src={image3} alt="" style={{ width: "190px", height: "190px" }} />
+                            <p>NO EQUIPMENT BREWING</p>
+                        </div>
+                    </Link>
 
                     <Link to="/equipment" style={{ textDecoration: "none", color: "inherit" }}>
                         <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
