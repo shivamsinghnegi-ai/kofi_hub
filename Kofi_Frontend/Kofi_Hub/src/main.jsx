@@ -8,6 +8,7 @@ import Farms from './Components/Farms.jsx';
 import EquipmentPage from './Components/Equipment.jsx';
 import Offers from './Components/Offers.jsx';
 import Drinks from './Components/Drinks.jsx';
+import Noequipment from './Components/Noequipment.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/equipment" element={<EquipmentPage/>}/>
         <Route path="/offers" element={<Offers/>}/>
         <Route path="/drinks" element={<Drinks/>}/>
+        <Route path="/noequipment" element={<Noequipment/>}/>
       </Routes>
     </Router> 
   </StrictMode>,

@@ -45,10 +45,12 @@ const LandingPage = () => {
                         <img src={image1} alt="" style={{ width: "190px", height: "190px" }} />
                         <p>ROASTED & GROUND COFFEE </p>
                     </div>
-                    <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
-                        <img src={image2} alt="" style={{ width: "190px", height: "190px" }} />
-                        <p>READY TO DRINK</p>
-                    </div>
+                    <Link to="/drinks" style={{ textDecoration: "none", color: "inherit" }}>
+                        <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px" }}>
+                            <img src={image2} alt="" style={{ width: "190px", height: "190px" }} />
+                            <p>READY TO DRINK</p>
+                        </div>
+                    </Link>
                     <div style={{ textAlign: "center", fontFamily: "Patua One", fontSize: "19px", cursor: "pointer" }}>
                         <img src={image3} alt="" style={{ width: "190px", height: "190px" }} />
                         <p>NO EQUIPMENT BREWING</p>
