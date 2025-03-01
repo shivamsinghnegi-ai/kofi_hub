@@ -10,6 +10,7 @@ import Offers from './Components/Offers.jsx';
 import Drinks from './Components/Drinks.jsx';
 import Noequipment from './Components/Noequipment.jsx';
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>

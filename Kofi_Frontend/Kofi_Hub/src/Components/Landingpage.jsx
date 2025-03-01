@@ -24,7 +24,39 @@ import image20 from "../assets/Group_6_1-change (1).png";
 import image21 from "../assets/Asset_1_1_140x (1).png";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
+import ProductCard from "../Components/ProductCard";
 
+
+const bestsellerCoffees = [
+    {
+        _id: "1",
+        name: "5 in 1 Explorer Pack",
+        description: "Kofi Hub Coffee Roasters",
+        price: "₹299",
+        image: image8,
+    },
+    {
+        _id: "2",
+        name: "Attikan Estate",
+        description: "Dark chocolate, Almonds",
+        price: "₹349",
+        image: image9,
+    },
+    {
+        _id: "3",
+        name: "VIENNA ROAST",
+        description: "Cocoa, Oaky, Bitter Sweet",
+        price: "₹329",
+        image: image10,
+    },
+    {
+        _id: "4",
+        name: "FRENCH ROAST",
+        description: "Strong, Cocoa, Bitter Sweet",
+        price: "₹379",
+        image: image11,
+    },
+];
 
 const LandingPage = () => {
     return (
@@ -96,183 +128,12 @@ const LandingPage = () => {
                     flexWrap: "wrap",
                     gap: "38px",
                     padding: "8px",
-                    marginLeft: "-40px"
+                    marginLeft: "-40px",
                 }}
             >
-                {/* Product Card 1 */}
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-                    <img
-                        src={image8}
-                        alt="5 in 1 Explorer Pack"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 5px" }}>
-                        5 in 1 Explorer Pack
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Kofi Hub Coffee Roasters
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-                {/* Product Card 2 */}
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={image9}
-                        alt="5 in 1 Explorer Pack"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Attikan Estate
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Dark chocolate, Almonds
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-                {/* Product Card 3 */}
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-                    <img
-                        src={image10}
-                        alt="5 in 1 Explorer Pack"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        VIENNA ROAST
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>Cocoa, oaky, Bitter Sweet </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-                {/* Product Card 4 */}
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-                    <img
-                        src={image11}
-                        alt="5 in 1 Explorer Pack"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        FRENCH ROAST
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Strong, Cocoa, Bitter Sweet
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
+                {bestsellerCoffees.map((coffee) => (
+                    <ProductCard key={coffee._id} product={coffee} />
+                ))}
             </div>
 
             <section style={{
