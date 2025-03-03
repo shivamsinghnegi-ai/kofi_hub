@@ -66,7 +66,8 @@ const Navbar = () => {
           src={user} 
           alt="" 
           style={{ width: "30px", height: "32px", marginTop: "-5px", cursor: "pointer" }} 
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/signup")}
+          
         />
       </div>
     </header>

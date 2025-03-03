@@ -25,14 +25,14 @@ import image21 from "../assets/Brew.png";
 import ProductCard from "../Components/ProductCard";
 
 const products = [
-    { id: 1, name: "Attikan Estate", image: image2 },
-    { id: 2, name: "Vienna Toast", image: image3 },
-    { id: 3, name: "French Roast", image: image4 },
-    { id: 4, name: "Silver Oak Cafe Blend", image: image5 },
-    { id: 5, name: "Attikan Estate", image: image6 },
-    { id: 6, name: "Vienna Toast", image: image7 },
-    { id: 7, name: "French Roast", image: image8 },
-    { id: 8, name: "Silver Oak Cafe Blend", image: image9 }
+    { id: 1, name: "Attikan Estate", image: image2,description:"Dark chocolate, Figs, .." },
+    { id: 2, name: "Vienna Toast", image: image3,description:"Cocoa , oaky ,Bitter sweet" },
+    { id: 3, name: "French Roast", image: image4,description:"Strong , Cocoa , Bitter Sweet" },
+    { id: 4, name: "Silver Oak Cafe Blend", image: image5,description:"Hazelnut, Honey, Grapes" },
+    { id: 5, name: "Attikan Estate", image: image6,description:"Dark chocolate, Figs, .." },
+    { id: 6, name: "Vienna Toast", image: image7,description:"Cocoa , oaky ,Bitter sweet" },
+    { id: 7, name: "French Roast", image: image8 ,description:"Strong , Cocoa , Bitter Sweet"},
+    { id: 8, name: "Silver Oak Cafe Blend", image: image9,description:"Hazelnut, Honey, Grapes" }
 ];
 
 const guideData = [

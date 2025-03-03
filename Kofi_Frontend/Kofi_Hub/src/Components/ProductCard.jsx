@@ -3,27 +3,31 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
     const [wishlist, setWishlist] = useState([]);
+    const [isWishlisted, setIsWishlisted] = useState(false);
+
 
     useEffect(() => {
         const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
         setWishlist(storedWishlist);
+        setIsWishlisted(storedWishlist.some((item) => item._id === product._id));
     }, []);
 
-
-    const isWishlisted = wishlist.some((item) => item._id === product._id);
-
     const toggleWishlist = () => {
-        let updatedWishlist;
+        let updatedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
         if (isWishlisted) {
-
-            updatedWishlist = wishlist.filter((item) => item._id !== product._id);
+            updatedWishlist = updatedWishlist.filter(item => item._id !== product._id);
         } else {
-
-            updatedWishlist = [...wishlist, product];
+            updatedWishlist.push({
+                _id: product._id || new Date().getTime().toString(),   
+                name: product.name,
+                image: product.image,
+                description: product.description
+            });
         }
 
-        setWishlist(updatedWishlist);
         localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+        setWishlist(updatedWishlist);
+        setIsWishlisted(!isWishlisted);
     };
 
     return (
@@ -48,7 +52,7 @@ const ProductCard = ({ product }) => {
                     right: "19px",
                     cursor: "pointer",
                     fontSize: "26px",
-                    backgroundColor: "#888", // Dark background for contrast
+                    backgroundColor: "#888",
                     borderRadius: "50%",
                     padding: "8px",
                     transition: "all 0.3s ease-in-out",
