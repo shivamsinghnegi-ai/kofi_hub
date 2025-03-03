@@ -5,6 +5,9 @@ import arrow from "../assets/heading-arrow_954X 4.png";
 import image from "../assets/Diwali2024_WebBanner07_250924 1.png";
 import Auto from "../assets/auto-equip 1.png";
 import Manual from "../assets/1_ne 1.png";
+import ProductCard from "../Components/ProductCard";
+
+
 
 const EquipmentPage = () => {
     const [equipment, setEquipment] = useState([]);
@@ -55,51 +58,9 @@ const EquipmentPage = () => {
                     <img src={arrow} alt="" style={{ width: "60%", height: "43px", marginTop: "55px", marginLeft: "70px" }} />
                 </div>
 
-                <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
-                    {automated.map((item) => (
-                        <div
-                            key={item.name}
-                            style={{
-                                fontFamily: "Poppins, sans-serif",
-                                padding: "15px",
-                                width: "300px",
-                                borderRadius: "10px",
-                                textAlign: "center",
-                                boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                                backgroundColor: "#ffffff",
-                            }}
-                        >
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                                style={{
-                                    width: "100%",
-                                    height: "auto",
-                                    borderRadius: "10px",
-                                }}
-                            />
-                            <h1 style={{ fontSize: "22px", margin: "10px 5px", color: "#000" }}>
-                                {item.name}
-                            </h1>
-                            <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                                {item.description}
-                            </p>
-                            <button
-                                style={{
-                                    width: "100%",
-                                    height: "45px",
-                                    borderRadius: "5px",
-                                    backgroundColor: "#90C1CF",
-                                    color: "white",
-                                    fontWeight: "bold",
-                                    fontSize: "18px",
-                                    border: "none",
-                                    cursor: "pointer",
-                                }}
-                            >
-                                Buy Now
-                            </button>
-                        </div>
+                <div style={{ display: "flex", gap: "55px", flexWrap: "wrap", justifyContent: "flex-start", marginTop: "15px" }}>
+                    {automated.map((automated) => (
+                        <ProductCard key={automated._id} product={automated} />
                     ))}
                 </div>
 
@@ -108,51 +69,9 @@ const EquipmentPage = () => {
                     <h2 style={{ fontSize: "50px", fontWeight: 300, fontFamily: "Patua one", marginTop: "90px" }}>Manual Brewing</h2>
                     <img src={arrow} alt="" style={{ width: "60%", height: "43px", marginTop: "100px", marginLeft: "70px" }} />
                 </div>
-                <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
-                    {manual.map((item) => (
-                        <div
-                            key={item.name}
-                            style={{
-                                fontFamily: "Poppins, sans-serif",
-                                padding: "15px",
-                                width: "300px",
-                                borderRadius: "10px",
-                                textAlign: "center",
-                                boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                                backgroundColor: "#ffffff",
-                            }}
-                        >
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                                style={{
-                                    width: "100%",
-                                    height: "auto",
-                                    borderRadius: "10px",
-                                }}
-                            />
-                            <h1 style={{ fontSize: "22px", margin: "10px 5px", color: "#000" }}>
-                                {item.name}
-                            </h1>
-                            <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                                {item.description}
-                            </p>
-                            <button
-                                style={{
-                                    width: "100%",
-                                    height: "45px",
-                                    borderRadius: "5px",
-                                    backgroundColor: "#90C1CF",
-                                    color: "white",
-                                    fontWeight: "bold",
-                                    fontSize: "18px",
-                                    border:"none",
-                                    cursor:"pointer"
-                                }}
-                            >
-                                Buy Now
-                            </button>
-                        </div>
+                <div style={{ display: "flex", gap: "30px", flexWrap: "wrap", justifyContent: "flex-start", marginTop: "15px" }}>
+                    {manual.map((manual) => (
+                        <ProductCard key={manual._id} product={manual} />
                     ))}
                 </div>
             </div>

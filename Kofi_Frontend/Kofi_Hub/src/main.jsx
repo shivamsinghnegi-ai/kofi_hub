@@ -9,6 +9,10 @@ import EquipmentPage from './Components/Equipment.jsx';
 import Offers from './Components/Offers.jsx';
 import Drinks from './Components/Drinks.jsx';
 import Noequipment from './Components/Noequipment.jsx';
+import WishlistPage from './Components/Wishlist.jsx';
+import CreateAccountForm from './Components/Authentication/SignUp.jsx';
+import LoginAccountForm from './Components/Authentication/Login.jsx';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +26,9 @@ createRoot(document.getElementById('root')).render(
         <Route path="/offers" element={<Offers/>}/>
         <Route path="/drinks" element={<Drinks/>}/>
         <Route path="/noequipment" element={<Noequipment/>}/>
+        <Route path="/wishlist" element={<WishlistPage/>}/>
+        <Route path="/signup" element={<CreateAccountForm/>}/>
+        <Route path="/login" element={<LoginAccountForm/>}/>
       </Routes>
     </Router> 
   </StrictMode>,

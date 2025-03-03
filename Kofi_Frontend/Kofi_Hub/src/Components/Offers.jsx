@@ -22,16 +22,17 @@ import image18 from "../assets/Water.png";
 import image19 from "../assets/Temp.png";
 import image20 from "../assets/Grind.png";
 import image21 from "../assets/Brew.png";
+import ProductCard from "../Components/ProductCard";
 
 const products = [
-    { id: 1, name: "Attikan Estate", image: image2 },
-    { id: 2, name: "Vienna Toast", image: image3 },
-    { id: 3, name: "French Roast", image: image4 },
-    { id: 4, name: "Silver Oak Cafe Blend", image: image5 },
-    { id: 5, name: "Attikan Estate", image: image6 },
-    { id: 6, name: "Vienna Toast", image: image7 },
-    { id: 7, name: "French Roast", image: image8 },
-    { id: 8, name: "Silver Oak Cafe Blend", image: image9 }
+    { id: 1, name: "Attikan Estate", image: image2,description:"Dark chocolate, Figs, .." },
+    { id: 2, name: "Vienna Toast", image: image3,description:"Cocoa , oaky ,Bitter sweet" },
+    { id: 3, name: "French Roast", image: image4,description:"Strong , Cocoa , Bitter Sweet" },
+    { id: 4, name: "Silver Oak Cafe Blend", image: image5,description:"Hazelnut, Honey, Grapes" },
+    { id: 5, name: "Attikan Estate", image: image6,description:"Dark chocolate, Figs, .." },
+    { id: 6, name: "Vienna Toast", image: image7,description:"Cocoa , oaky ,Bitter sweet" },
+    { id: 7, name: "French Roast", image: image8 ,description:"Strong , Cocoa , Bitter Sweet"},
+    { id: 8, name: "Silver Oak Cafe Blend", image: image9,description:"Hazelnut, Honey, Grapes" }
 ];
 
 const guideData = [
@@ -58,56 +59,20 @@ const Offers = () => {
             {/* ------------------PRODUCT CARDS------------------ */}
             <div
                 style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(4, 1fr)", // 4 cards per row
-                    gap: "44px",
-                    maxWidth: "1450px",
-                    margin: "0 auto",
-                    padding: "20px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "38px",
+                    padding: "8px",
+                    marginLeft: "-40px",
                 }}
             >
-                {products.map((product) => (
-                    <div
-                        key={product.id}
-                        style={{
-                            fontFamily: "Poppins, sans-serif",
-                            padding: "15px",
-                            borderRadius: "10px",
-                            textAlign: "center",
-                            boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                            backgroundColor: "#ffffff",
-                        }}
-                    >
-                        <img
-                            src={product.image}
-                            alt={product.name}
-                            style={{
-                                width: "100%",
-                                height: "340px",
-                                borderRadius: "10px",
-                            }}
-                        />
-
-                        <h1 style={{ fontSize: "22px", margin: "10px 5px" }}>{product.name}</h1>
-                        <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>Kofi Hub Coffee Roasters</p>
-                        <button
-                            style={{
-                                width: "100%",
-                                height: "45px",
-                                borderRadius: "5px",
-                                backgroundColor: "#90C1CF",
-                                color: "white",
-                                fontWeight: "bold",
-                                fontSize: "18px",
-                                border: "none",
-                                cursor: "pointer",
-                            }}
-                        >
-                            Buy Now
-                        </button>
-                    </div>
+                {products.map((products) => (
+                    <ProductCard key={products._id} product={products} />
                 ))}
             </div>
+
 
             <div style={{ backgroundColor: "#FFF9EF", height: "1000px", marginTop: "70px" }}>
                 <h1 style={{ fontSize: "28px", fontWeight: "bold", fontFamily: "poppins", paddingTop: "70px", paddingLeft: "20px", fontSize: "55px" }}>

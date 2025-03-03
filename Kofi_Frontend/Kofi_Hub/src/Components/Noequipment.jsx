@@ -17,9 +17,22 @@ import img12 from "../assets/cold.png";
 import img13 from "../assets/cold2.png";
 import img14 from "../assets/cold3.png";
 import img15 from "../assets/cold4.png";
+import ProductCard from "../Components/ProductCard";
 
+const EasyPourProducts = [
+    { image: img7, title: "Attikan Estate", description: "Dark chocolate, Figs, .." },
+    { image: img8, title: "Vienna Toast", description: "Cocoa , oaky , Bitter sweet.." },
+    { image: img9, title: "French Roast", description: "Strong , Cocoa , Bitter Sweet" },
+    { image: img10, title: "Silver Oak Cafe Blend", description: "Hazelnut, Honey, Grapes" },
+];
 
+const ColdBrewSachets = [
 
+    { image: img12, title: "Cold Brew Classic", description: "Smooth, Chocolatey, Refreshing" },
+    { image: img13, title: "Cold Brew Mocha", description: "Rich, Velvety, Cocoa Notes" },
+    { image: img14, title: "Cold Brew Vanilla", description: "Smooth, Sweet, Creamy" },
+    { image: img15, title: "Cold Brew Hazelnut", description: "Nutty, Caramel, Smooth" },
+];
 
 const Noequipment = () => {
 
@@ -68,192 +81,27 @@ const Noequipment = () => {
 
 
             {/*---------------------------------------- PRODUCT CARDS -------------------------------------------------------------*/}
-            <div style={{ display: "flex", justifyContent: "space-evenly", gap: "30px" }}>
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img7}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Attikan Estate
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Dark chocolate, Figs, ..
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img8}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Vienna Toast
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Cocoa , oaky ,Bitter sweet..
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img9}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "388px",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        French Roast
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Strong , Cocoa , Bitter Sweet
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img10}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "388px",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Silver Oak Cafe Blend
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Hazelnut, Honey, Grapes
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "38px",
+                    padding: "8px",
+                    marginLeft: "-40px",
+                }}
+            >
+                {EasyPourProducts.map((coffee) => (
+                    <ProductCard key={coffee._id} product={coffee} />
+                ))}
             </div>
 
             <div style={{ display: "flex" }}>
                 <h1 style={{ fontFamily: "Cormorant", fontWeight: 500, fontSize: "70px", marginTop: "100px" }}>Cold Water Brewing </h1>
                 <img src={img5} alt="" style={{ width: "58%", height: "43px", marginTop: "120px", marginLeft: "70px", }} />
             </div>
-            <p style={{ fontFamily: "poppins", fontSize: "30px", marginTop: "30px",lineHeight:"1.7" }}>Want to brew smooth, refreshing cups of coffee without special equipment? Cold water brewing is the way to go. Just steep our cold brew bags overnight, and wake up to great-tasting coffee that you can savour all day.Each bag makes 3 glasses.</p>
+            <p style={{ fontFamily: "poppins", fontSize: "30px", marginTop: "30px", lineHeight: "1.7" }}>Want to brew smooth, refreshing cups of coffee without special equipment? Cold water brewing is the way to go. Just steep our cold brew bags overnight, and wake up to great-tasting coffee that you can savour all day.Each bag makes 3 glasses.</p>
             <img src={img11} alt="" style={{ width: "100%", marginTop: "70px" }} />
 
             <div style={{ display: "flex" }}>
@@ -262,193 +110,29 @@ const Noequipment = () => {
             </div>
 
 
-                {/*---------------------------------------- PRODUCT CARDS -------------------------------------------------------------*/}
-                <div style={{ display: "flex", justifyContent: "space-evenly", gap: "30px" }}>
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img12}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Attikan Estate
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Dark chocolate, Figs, ..
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img13}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Vienna Toast
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Cocoa , oaky ,Bitter sweet..
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img14}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "388px",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        French Roast
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Strong , Cocoa , Bitter Sweet
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
-                <div
-                    style={{
-                        fontFamily: "Poppins, sans-serif",
-                        padding: "15px",
-                        width: "300px",
-                        borderRadius: "10px",
-                        textAlign: "center",
-                        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
-                        backgroundColor: "#ffffff",
-                    }}
-                >
-
-                    <img
-                        src={img15}
-                        alt="Attikan Estate"
-                        style={{
-                            width: "100%",
-                            height: "388px",
-                            borderRadius: "10px",
-                        }}
-                    />
-                    <h1 style={{ fontSize: "22px", margin: "10px 0 5px" }}>
-                        Silver Oak Cafe Blend
-                    </h1>
-                    <p style={{ fontSize: "18px", color: "#555", marginBottom: "10px" }}>
-                        Hazelnut, Honey, Grapes
-                    </p>
-                    <button
-                        style={{
-                            width: "100%",
-                            height: "45px",
-                            borderRadius: "5px",
-                            backgroundColor: "#90C1CF",
-                            color: "white",
-                            fontWeight: "bold",
-                            fontSize: "18px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Buy Now
-                    </button>
-                </div>
-
+            {/*---------------------------------------- PRODUCT CARDS -------------------------------------------------------------*/}
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "38px",
+                    padding: "8px",
+                    marginLeft: "-40px",
+                }}
+            >
+                {ColdBrewSachets.map((coffee) => (
+                    <ProductCard key={coffee._id} product={coffee} />
+                ))}
             </div>
+
 
             <Footer />
 
 
 
-                        
+
 
 
 
