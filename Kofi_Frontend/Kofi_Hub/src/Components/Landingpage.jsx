@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Carousel from "../Components/Carousel/Carousel";
 import image1 from "../assets/blod-coffee-nav (2).png";
@@ -25,42 +25,45 @@ import image21 from "../assets/Asset_1_1_140x (1).png";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
-
+import FloatingChatButton from "./ChatBot/FloatingChatButton";
+import ChatModal from "./ChatBot/ChatModal";
 
 const bestsellerCoffees = [
-    {
-        _id: "1",
-        name: "5 in 1 Explorer Pack",
-        description: "Kofi Hub Coffee Roasters",
-        price: "₹299",
-        image: image8,
-    },
-    {
-        _id: "2",
-        name: "Attikan Estate",
-        description: "Dark chocolate, Almonds",
-        price: "₹349",
-        image: image9,
-    },
-    {
-        _id: "3",
-        name: "VIENNA ROAST",
-        description: "Cocoa, Oaky, Bitter Sweet",
-        price: "₹329",
-        image: image10,
-    },
-    {
-        _id: "4",
-        name: "FRENCH ROAST",
-        description: "Strong, Cocoa, Bitter Sweet",
-        price: "₹379",
-        image: image11,
-    },
+{
+_id: "1",
+name: "5 in 1 Explorer Pack",
+description: "Kofi Hub Coffee Roasters",
+price: "₹299",
+image: image8,
+},
+{
+_id: "2",
+name: "Attikan Estate",
+description: "Dark chocolate, Almonds",
+price: "₹349",
+image: image9,
+},
+{
+_id: "3",
+name: "VIENNA ROAST",
+description: "Cocoa, Oaky, Bitter Sweet",
+price: "₹329",
+image: image10,
+},
+{
+_id: "4",
+name: "FRENCH ROAST",
+description: "Strong, Cocoa, Bitter Sweet",
+price: "₹379",
+image: image11,
+},
 ];
 
 const LandingPage = () => {
+    const [isChatOpen, setIsChatOpen] = useState(false);
+
     return (
-        <div>
+        <div className="relative">
             <Navbar />
             <Carousel />
             <div style={{ backgroundColor: "#FFF9EF", height: "440px" }}>
@@ -102,8 +105,6 @@ const LandingPage = () => {
                             <p>ROASTED COFFEE RECOMMENDATION</p>
                         </div>
                     </Link>
-
-
                 </div>
             </div>
             <Link to="/offers" style={{ textDecoration: "none", color: "inherit" }}>
@@ -146,7 +147,6 @@ const LandingPage = () => {
                 textAlign: "left",
                 alignItems: "flex-start",
                 minHeight: "800px"
-
             }}>
                 <div style={{
                     backgroundColor: "white",
@@ -157,8 +157,6 @@ const LandingPage = () => {
                     marginLeft: "60px",
                     alignSelf: "flex-start",
                     marginTop: "50px",
-
-
                 }}>
                     <h2 style={{ fontSize: "40px", color: "black", fontWeight: "bold" }}>Brew More. Save More!</h2>
                     <p style={{ fontSize: "21px", color: "#444", fontFamily: "poppins" }}>When you get a subscription from us, you:</p>
@@ -193,7 +191,6 @@ const LandingPage = () => {
                 </div>
                 <img src={image13} alt="" style={{ width: "20%", marginLeft: "1170px", marginTop: "-703px" }} />
                 <img src={image14} alt="" style={{ width: "20%", marginLeft: "-1530px", marginTop: "-80px" }} />
-
 
                 <div>
                     <section style={{ textAlign: "center", backgroundColor: "#FFF9EF", padding: "10px", fontFamily: "Cormorant", marginLeft: "-180px", marginTop: "60px" }}>
@@ -232,17 +229,15 @@ const LandingPage = () => {
                 <img src={image20} alt="" />
             </div>
 
-
             <div style={{ textAlign: "center", fontFamily: "poppins", fontSize: "30px", marginTop: "140px", display: "flex", alignItems: "center", justifyContent: "center", gap: "20px" }}>
                 <img src={image21} alt="" style={{ width: "150px" }} />
-                < h1>Happy Customers</h1>
+                <h1>Happy Customers</h1>
             </div>
-
 
             <div style={{ display: "flex", justifyContent: "center", gap: "50px", flexWrap: "wrap", marginTop: "30px" }}>
                 <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between", width: "400px" }}>
                     <p style={{ fontSize: "18px", color: "#000000", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px", fontFamily: "poppins", width: "400px" }}>
-                        "I've been drinking coffee for a year now but never tried Blue Tokai. I heard about Attikan a lot and it was worth the hype! I am not a fan of darker roasts but it was one of the smoothest coffees I’ve tried till now. I'm definitely ordering again."
+                        "I've been drinking coffee for a year now but never tried Blue Tokai. I heard about Attikan a lot and it was worth the hype! I am not a fan of darker roasts but it was one of the smoothest coffees I've tried till now. I'm definitely ordering again."
                     </p>
                     <p style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: "10px", fontFamily: "poppins" }}>Keerthi Hardasani</p>
                     <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
@@ -258,19 +253,17 @@ const LandingPage = () => {
 
                 <div style={{ backgroundColor: "#FFF9EF", borderRadius: "10px", padding: "20px", width: "300px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "space-between", width: "400px" }}>
                     <p style={{ fontSize: "19px", marginBottom: "15px", lineHeight: "1.6", minHeight: "120px", fontFamily: "poppins", width: "400px" }}>
-                        "Blue Tokai is hands down the best coffee brand out there! I've enjoyed each cup at their cafes and whenever I brew at home. I can’t get enough of their coffee and I recommend it to everyone!"
+                        "Blue Tokai is hands down the best coffee brand out there! I've enjoyed each cup at their cafes and whenever I brew at home. I can't get enough of their coffee and I recommend it to everyone!"
                     </p>
                     <p style={{ fontWeight: "bold", fontSize: "1.1rem", color: "#000000", marginBottom: "10px", fontFamily: "poppins" }}>Krishna Sarbadhikary</p>
                     <div style={{ color: "#ffcc00", fontSize: "1.5rem" }}>★ ★ ★ ★ ★</div>
                 </div>
             </div>
+            {/* Chat functionality */}
+            <FloatingChatButton onClick={() => setIsChatOpen(true)} />
+            <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+            
             <Footer />
-
-
-
-
-
-
         </div>
     );
 };
