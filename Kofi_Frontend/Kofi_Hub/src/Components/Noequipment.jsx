@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import image1 from '../assets/banner1.png';
-import image2 from '../assets/DALL·E 2025-02-24 15.11.54 - A close-up of a pink ceramic mug with vertical ridges, featuring a drip coffee bag hanging over the rim. Hot water is being poured into the bag, brewi.webp';
+import image2 from '../assets/Cold_coffee.webp';
 import image3 from '../assets/Cold_coffee.webp';
 import img3 from "../assets/balu-col-ig_large 1.png";
 import img4 from "../assets/leftcols_538x 2.png";
