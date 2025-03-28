@@ -19,21 +19,21 @@ const Navbar = () => {
     height: "77px",
     width: "100px",
     marginTop: "-18px",
-    marginLeft: "20px",
+    marginLeft: "3px",
     cursor: "pointer",
   };
 
   const navListStyle = {
     listStyle: "none",
     display: "flex",
-    gap: "40px",
+    gap: "30px",
     margin: 0,
     padding: 0,
     fontSize: "18px",
     fontFamily: "Patua One",
     flex: 1,
     justifyContent: "center",
-    marginLeft: "620px",
+    marginLeft: "400px",
   };
 
   const navItemStyle = {
@@ -58,6 +58,8 @@ const Navbar = () => {
             <li style={navItemStyle} onClick={() => navigate("/equipment")}>Equipment</li>
             <li style={navItemStyle} onClick={() => navigate("/AboutUs")}>About Us</li>
             <li style={navItemStyle} onClick={() => navigate("/Contact")}>Contact Us</li>
+            <li style={navItemStyle} onClick={() => navigate("/wishlist")}>Wishlist</li>
+            <li style={navItemStyle} onClick={() => navigate("/testimonials")}>Testimonials</li>
           </ul>
         </nav>
 
