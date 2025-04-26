@@ -8,7 +8,7 @@ app.use(express.json());
 
 // CORS Configuration
 const corsOptions = {
-  origin: 'http://localhost:5173', // Single origin for simplicity during testing
+  origin: 'https://kofi-hub-10.onrender.com', // Single origin for simplicity during testing
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   optionsSuccessStatus: 204, // Ensure preflight returns 204
@@ -17,7 +17,7 @@ const corsOptions = {
 // Apply CORS middleware globally
 app.use(cors(corsOptions));
 
-const uri = "mongodb+srv://test:test123@cluster0.cmvmn.mongodb.net/";
+const uri = "mongodb+srv://shivamsinghnegi2006:1234@cluster0.6teit.mongodb.net/";
 const client = new MongoClient(uri);
 const dbName = "Kofi_Hub";
 
