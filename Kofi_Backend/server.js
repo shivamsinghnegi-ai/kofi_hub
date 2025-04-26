@@ -6,14 +6,18 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const app = express();
 app.use(express.json());
 
+// CORS Configuration
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://kofi-hub-7.onrender.com"],
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type",
+  origin: 'http://localhost:5173', // Single origin for simplicity during testing
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  optionsSuccessStatus: 204, // Ensure preflight returns 204
 };
+
+// Apply CORS middleware globally
 app.use(cors(corsOptions));
 
-const uri = "mongodb+srv://shivamsinghnegi2006:1234@cluster0.6teit.mongodb.net/";
+const uri = "mongodb+srv://test:test123@cluster0.cmvmn.mongodb.net/";
 const client = new MongoClient(uri);
 const dbName = "Kofi_Hub";
 
@@ -32,8 +36,9 @@ async function startServer() {
     const equipmentcollection = db.collection("Equipment");
     const drinkscollection = db.collection("Drinks");
     const chatbotCollection = db.collection("chatbot");
+    const reviewsCollection = db.collection("reviews");
 
-    // Contact Form Routes
+    // Contact Form Routes (unchanged)
     app.post('/contact', async (req, res) => {
       try {
         const { name, email, phonenumber, message } = req.body;
@@ -73,7 +78,7 @@ async function startServer() {
       }
     });
 
-    // Coffee Beans Routes
+    // Coffee Beans Routes (unchanged)
     app.get('/coffee-beans', async (req, res) => {
       try {
         const allBeans = await coffeebeanscollection.find().toArray();
@@ -171,7 +176,7 @@ async function startServer() {
       }
     });
 
-    // Equipment Routes
+    // Equipment Routes (unchanged)
     app.get('/equipment', async (req, res) => {
       try {
         const allEquipment = await equipmentcollection.find().toArray();
@@ -269,7 +274,7 @@ async function startServer() {
       }
     });
 
-    // Drinks Routes
+    // Drinks Routes (unchanged)
     app.get('/drinks', async (req, res) => {
       try {
         const drinks = await drinkscollection.find().toArray();
@@ -333,7 +338,7 @@ async function startServer() {
       }
     });
 
-    // Chatbot Routes
+    // Chatbot Routes (unchanged)
     app.post('/chatbot/query', async (req, res) => {
       try {
         const { userId, question } = req.body;
@@ -385,6 +390,56 @@ async function startServer() {
       } catch (error) {
         console.error('Error deleting chat history:', error);
         res.status(500).json({ error: "Failed to delete chat history" });
+      }
+    });
+
+    // Review Routes
+    app.post('/reviews', async (req, res) => {
+      console.log('POST /reviews received:', req.body); // Debug log
+      try {
+        const { productId, productName, rating, feedback } = req.body;
+        if (!productId || !productName || !rating) {
+          return res.status(400).json({ message: "productId, productName, and rating are required" });
+        }
+        if (rating < 1 || rating > 5) {
+          return res.status(400).json({ message: "Rating must be between 1 and 5" });
+        }
+        const newReview = {
+          productId,
+          productName,
+          rating,
+          feedback,
+          date: new Date(),
+        };
+        await reviewsCollection.insertOne(newReview);
+        res.status(201).json({ message: "Review submitted successfully", review: newReview });
+      } catch (err) {
+        res.status(500).json({ error: err.message });
+      }
+    });
+
+    app.get('/reviews/:productId', async (req, res) => {
+      try {
+        const { productId } = req.params;
+        const reviews = await reviewsCollection
+          .find({ productId })
+          .sort({ date: -1 })
+          .toArray();
+        res.status(200).json(reviews);
+      } catch (err) {
+        res.status(500).json({ error: err.message });
+      }
+    });
+
+    app.get('/reviews', async (req, res) => {
+      try {
+        const reviews = await reviewsCollection
+          .find()
+          .sort({ date: -1 })
+          .toArray();
+        res.status(200).json(reviews);
+      } catch (err) {
+        res.status(500).json({ error: err.message });
       }
     });
 

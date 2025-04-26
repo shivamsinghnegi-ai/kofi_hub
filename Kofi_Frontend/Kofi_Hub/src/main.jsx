@@ -1,9 +1,8 @@
 import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React from 'react';
 import ContactUs from './Components/ContactUs.jsx';
-import LandingPage from './Components/Landingpage.jsx';
+import LandingPage from './Components/LandingPage.jsx';
 import AboutUs from './Components/AboutUs.jsx';
 import Farms from './Components/Farms.jsx';
 import EquipmentPage from './Components/Equipment.jsx';
@@ -13,19 +12,19 @@ import Noequipment from './Components/Noequipment.jsx';
 import WishlistPage from './Components/Wishlist.jsx';
 import CreateAccountForm from './Components/Authentication/SignUp.jsx';
 import LoginAccountForm from './Components/Authentication/Login.jsx';
-import FloatingButton from './Components/ChatBot/FloatingChatButton.jsx'; // Adjust import path
-import ChatModal from './Components/ChatBot/ChatModal.jsx'; // Adjust import path
+import FloatingButton from './Components/ChatBot/FloatingChatButton.jsx';
+import ChatModal from './Components/ChatBot/ChatModal.jsx';
+import ProductDetails from './Components/ProductDetails.jsx';
+import ProductDetailsLanding from './Components/ProductDetailsLanding.jsx';
+import Checkout from './Components/Checkout.jsx';
+import Review from './Components/Review.jsx';
+import Testimonials from './Components/Testimonials.jsx';
 
 const App = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
-  const handleChatOpen = () => {
-    setIsChatOpen(true);
-  };
-
-  const handleChatClose = () => {
-    setIsChatOpen(false);
-  };
+  const handleChatOpen = () => setIsChatOpen(true);
+  const handleChatClose = () => setIsChatOpen(false);
 
   return (
     <div className="relative min-h-screen">
@@ -41,14 +40,14 @@ const App = () => {
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/signup" element={<CreateAccountForm />} />
         <Route path="/login" element={<LoginAccountForm />} />
+        <Route path="/landing/product/:id" element={<ProductDetailsLanding />} />
+        <Route path="/offers/product/:id" element={<ProductDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/review" element={<Review />} />
+        <Route path="/testimonials" element={<Testimonials />} />
       </Routes>
-
-      {/* Add your existing components here */}
       <FloatingButton onClick={handleChatOpen} />
-      <ChatModal 
-        isOpen={isChatOpen}
-        onClose={handleChatClose}
-      />
+      <ChatModal isOpen={isChatOpen} onClose={handleChatClose} />
     </div>
   );
 };
