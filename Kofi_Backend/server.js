@@ -17,7 +17,7 @@ const uri = "mongodb+srv://shivamsinghnegi2006:1234@cluster0.6teit.mongodb.net/"
 const client = new MongoClient(uri);
 const dbName = "Kofi_Hub";
 
-const GEMINI_API_KEY = "AIzaSyChN-1VqZ5I68DlsHDFIutjr8yHu-BRZMI";
+const GEMINI_API_KEY = "AIzaSyA0D5ukYKCeKCNNbyfFnNT1nhiRH-_AGSQ";
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
