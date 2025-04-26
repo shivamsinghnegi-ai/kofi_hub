@@ -73,7 +73,7 @@ const ContactUs = () => {
             marginTop: "-30px",
             marginBottom: "70px",
             borderBottom: "2px solid black",
-            marginTop: "30px",
+
             fontWeight: "300",
             marginLeft: "20px",
           }}

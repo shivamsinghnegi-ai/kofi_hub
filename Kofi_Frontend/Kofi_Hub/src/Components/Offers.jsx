@@ -75,7 +75,7 @@ const Offers = () => {
 
 
             <div style={{ backgroundColor: "#FFF9EF", height: "1000px", marginTop: "70px" }}>
-                <h1 style={{ fontSize: "28px", fontWeight: "bold", fontFamily: "poppins", paddingTop: "70px", paddingLeft: "20px", fontSize: "55px" }}>
+                <h1 style={{  fontWeight: "bold", fontFamily: "poppins", paddingTop: "70px", paddingLeft: "20px", fontSize: "55px" }}>
                     Start your home <br />
                     <span style={{ fontWeight: "bold", fontFamily: "poppins", }}>brewing journey with</span>{" "} <br />
                     <span style={{ fontWeight: "900", fontFamily: "poppins", }}>our</span>{" "}
@@ -97,7 +97,6 @@ const Offers = () => {
                         style={{
                             fontSize: "22px",
                             lineHeight: "1.6",
-                            marginTop: "15px",
                             maxWidth: "650px",
                             marginTop: "40px"
                         }}
